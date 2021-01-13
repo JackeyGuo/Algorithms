@@ -6,7 +6,7 @@ class Solution:
         # base case dp[0][...]=0, dp[...][0]=0
         for n in range(1, N + 1):
             for w in range(1, W + 1):
-                # 判断当前加上当前物品，是否超出背包容量
+                # 判断当前物品，是否超出背包容量
                 if w - wt[n - 1] < 0:
                     # 背包容量不够，选择不装入背包
                     dp[n][w] = dp[n - 1][w]
