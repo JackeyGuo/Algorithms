@@ -28,10 +28,12 @@ class Solution:
                 dp[i][1] = max(dp[i - 1][1], -prices[i])
 
         return dp[n - 1][0]
+
     """
     状态压缩：
     新状态只和相邻的一个状态有关，其实不用整个 dp 数组，只需要一个变量储存相邻的那个状态就足够了，这样可以把空间复杂度降到 O(1):
     """
+
     def maxProfitRevise(self, prices: List[int]) -> int:
         n = len(prices)
         # base case: dp[-1][0] = 0, dp[-1][1] = -infinity
@@ -44,7 +46,6 @@ class Solution:
             dp_i_1 = max(dp_i_1, -prices[i])
 
         return dp_i_0
-
 
 
 if __name__ == "__main__":
