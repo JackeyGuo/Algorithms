@@ -14,10 +14,13 @@ class Solution:
         max_k = K
         # 创建三维数组
         # dp = [[[0 for _ in range(2)] for _ in range(max_k + 1)] for _ in range(n)]
-        # 以下方法也可以创建
+        # 以下方法都可以创建
         dp = [[[0, 0] for _ in range(max_k + 1)] for _ in range(n)]
+        # dp = [[[0] * 2 for _ in range(max_k + 1)] for _ in range(n)]
+
         # 以下代码创建三维dp数组，取第三维[0]或[1]时会出错
         # dp = [[[0, 0]] * (max_k + 1) for _ in range(n)]
+        
         if n == 0: return 0
 
         # base case
