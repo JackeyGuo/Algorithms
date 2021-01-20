@@ -18,9 +18,10 @@ class Solution:
         dp = [[[0, 0] for _ in range(max_k + 1)] for _ in range(n)]
         # dp = [[[0] * 2 for _ in range(max_k + 1)] for _ in range(n)]
 
-        # 以下代码创建三维dp数组，取第三维[0]或[1]时会出错
+        # 以下代码创建三维dp数组，取第三维[0]或[1]时会出错，
+        # 原因在于：浅拷贝一个list python只能拷贝第一层，如果拷贝的元素还是list，两个列表会指向同一个引用，当这个引用中的列表值发生变化，两个列表都会变
         # dp = [[[0, 0]] * (max_k + 1) for _ in range(n)]
-        
+
         if n == 0: return 0
 
         # base case
