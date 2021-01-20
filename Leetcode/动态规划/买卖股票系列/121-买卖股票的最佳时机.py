@@ -2,6 +2,7 @@ from typing import List
 
 
 class Solution:
+    # k = 1
     def maxProfit(self, prices: List[int]) -> int:
         """
         dp[i][1][0] = max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])
