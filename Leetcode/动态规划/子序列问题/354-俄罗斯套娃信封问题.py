@@ -17,9 +17,8 @@ class Solution:
         # 取二维数组第二列
         nums = [enve[1] for enve in envelopes]
 
-        dp = []
+        dp = [1] * n
         for i in range(n):
-            dp.append(1)
             for j in range(i):
                 if nums[j] < nums[i]:
                     dp[i] = max(dp[i], dp[j] + 1)
