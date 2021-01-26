@@ -1,8 +1,11 @@
 from typing import List
 
-
+# 给定一个字符串 s ，找到其中最长的回文子序列，并返回该序列的长度。可以假设 s 的最大长度为 1000 。
 class Solution:
     def longestPalindromeSubseq(self, str1):
+        """
+        在子串s[i..j]中，最长回文子序列的长度为dp[i][j]
+        """
         n = len(str1)
 
         # 反着遍历，只遍历右上半部分, y的第一个位置比x大1，最终位置为n
