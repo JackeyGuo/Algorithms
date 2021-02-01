@@ -6,6 +6,7 @@ class Solution:
     def fairCandySwap(self, A: List[int], B: List[int]) -> List[int]:
         # 数学+哈希表
         sumA, sumB = sum(A), sum(B)
+        # dic = collections.Counter(A)
         dic = set(A)
 
         diff = int((sumA - sumB) / 2)
