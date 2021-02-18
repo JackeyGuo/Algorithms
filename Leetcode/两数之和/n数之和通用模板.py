@@ -51,4 +51,4 @@ class Solution:
         return self.nSumTarget(nums, 4, 0, target)
 
 
-print(Solution().fourSum(nums=[-1, 0, 1, 2, -1, -4], target=-1))
+print(Solution().fourSum(nums=[-1,0,1,2,-1,-4], target=-1))
