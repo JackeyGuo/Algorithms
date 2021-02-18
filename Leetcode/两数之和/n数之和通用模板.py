@@ -30,13 +30,18 @@ class Solution:
                     while left < right and nums[right] == high: right -= 1
         else:
             # n > 2 时，递归计算 (n-1)Sum 的结果
-            for i in range(start, size):
+            i = start
+            while i < size:
                 tmp_res = self.nSumTarget(nums, n - 1, i + 1, target - nums[i])
 
                 for tpr in tmp_res:
                     tpr.insert(0, nums[i])
                     res.append(tpr)
+
+                # 跳过第一个数字重复的情况，否则会出现重复结果
                 while i < size - 1 and nums[i] == nums[i + 1]: i += 1
+                # 继续计算下一个数字
+                i += 1
 
         return res
 
@@ -46,4 +51,4 @@ class Solution:
         return self.nSumTarget(nums, 4, 0, target)
 
 
-print(Solution().fourSum(nums=[1, 0, -1, 0, -2, 2], target=0))
+print(Solution().fourSum(nums=[-1,0,1,2,-1,-4], target=-1))
